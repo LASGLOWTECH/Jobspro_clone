@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+html {
+  font-family: var(--font-sans);
+}
+
+@import "tailwindcss";
+.clip-wave {
+  clip-path: polygon(0 60%, 25% 70%, 50% 60%, 75% 70%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@theme {
+  /*  color pallete */
+  --color-primary: #005AAB;
+  --color-primary1: #ed1651;
+  --color-primary2: #ffde16;
+  --color-secondary: #D0D5DD;
+  
+  --color-dark: #111827;
+  --color-light: #f9fafb;
+
+  /*  Fonts */
+--font-sans: "Raleway", "Poppins", sans-serif;
+
+  /*  Breakpoints */
+  --breakpoint-sm: 640px; 
+  --breakpoint-md: 768px;   
+  --breakpoint-lg: 1024px;  
+  --breakpoint-xl: 1280px; 
+  --breakpoint-2xl: 1536px; 
+}
