@@ -1,21 +1,53 @@
-<<<<<<< HEAD
-# Jobspro_clone
-A modern job portal built with React + Vite + TailwindCSS. Simulates both Job Seekers and Job Posters with role-based routing, local storage authentication, and a clean responsive UI.
-=======
-# React + Vite
+# JobsPro Platform Clone — React (Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal JobsPro clone 
+> Deploy this repo to Vercel or Netlify (see Deploy notes below).
 
-Currently, two official plugins are available:
+## Tech
+- React + Vite
+- react-router-dom (v6)
+- LocalStorage simulated authentication
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Two roles: **Job-Seeker** and **Job-Poster**
+- Separate login/register for each role (simulated)
+- Role-based routing & protection
+- Dashboards with 3 modules:
+  - Dashboard overview
+  - KYC Verification (simulated)
+  - Jobs page (apply / post)
+- Logout clears session
+- Mock data included
 
-## React Compiler
+## Run locally
+1. `git clone <repo>`
+2. `cd jobspro-clone`
+3. `npm install`
+4. `npm run dev`
+5. Open `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to test user flows
+- Home page has buttons:
+  - Login as Job-Seeker -> `/login/seeker`
+  - Login as Job-Poster -> `/login/poster`
+- Register works the same and logs you in.
+- Once logged in:
+  - Job-Seeker routes are under `/seeker/*`.
+  - Job-Poster routes are under `/poster/*`.
+  - Attempting to access the other role's path redirects you appropriately.
+- KYC forms update simulated KYC status stored in localStorage.
+- Logout clears localStorage.
 
-## Expanding the ESLint configuration
+## Deployment
+- Build: `npm run build`
+- Deploy the `dist` folder to Vercel or Netlify.
+- On Vercel: connect the repo, set root to project, build command `npm run build`, output `dist`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> f969a53 (Initial commit - JobsPro project setup)
+## Notes & optional enhancements
+- Replace file inputs with real upload endpoints for production.
+- Add form validation libraries (Yup, react-hook-form).
+- Replace mock data with API endpoints for persistence.
+
+## Demo project
+ Live Demo: https://jobspro-clone-zeta.vercel.app/
+ GitHub Repository: https://github.com/LASGLOWTECH/Jobspro_clone
